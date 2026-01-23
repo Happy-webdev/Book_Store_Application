@@ -24,16 +24,16 @@ const userSchema=mongoose.Schema({
      default:"user",
      enum:["user","admin"]
   },
-  favorites:[{
-   type:mongoose.type.ObjectId,
+  favourites:[{
+   type:mongoose.Types.ObjectId,
    ref:"books"
   },],
   orders:[{
-   type:mongoose.type.ObjectId,
+      type:mongoose.Types.ObjectId,
    ref:"order"
   },],
   cart:[{
-   type:mongoose.type.ObjectId,
+      type:mongoose.Types.ObjectId,
    ref:"books"
   },]
 },
