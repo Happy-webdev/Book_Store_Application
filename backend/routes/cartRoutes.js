@@ -6,7 +6,7 @@ const { authUser } = require("./userAuth");
 router.put("/add-book-to-cart",authUser, async(req,res)=>{
 try {
   const {bookid,id}=req.headers;
-  console.log(bookid + "  "+id);
+  // console.log(bookid + "  "+id);
   const userData=await User.findById(id);
   const userBookInCart= await userData.cart.includes(bookid);
   if(userBookInCart){

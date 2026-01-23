@@ -5,6 +5,7 @@ const userRoutes=require("./routes/userRoutes")
 const bookRoutes=require("./routes/bookRoutes") 
 const favouritesRoutes=require("./routes/favouritesRoutes") 
 const cartRoutes=require("./routes/cartRoutes")
+const orderRoutes=require("./routes/orderRoutes")
 const app=express()
 
 //
@@ -15,6 +16,7 @@ app.use("/api/user",userRoutes)
 app.use("/api/user",bookRoutes)
 app.use("/api/user",favouritesRoutes)
 app.use("/api/user",cartRoutes)
+app.use("/api/user",orderRoutes)
 // dbConn();
 app.listen(process.env.PORT,()=>{
   console.log(`server is running on ${process.env.PORT}`);
