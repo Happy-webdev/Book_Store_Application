@@ -55,7 +55,7 @@ router.delete("/delete-book", authUser, async (req, res) => {
 });
 
 //get all books
-router.get("/get-all-books", authUser, async (req, res) => {
+router.get("/get-all-books", async (req, res) => {
   try {
     const books = await Book.find().sort({ createdAt: -1 });
 
@@ -69,7 +69,7 @@ router.get("/get-all-books", authUser, async (req, res) => {
 });
 
 //get all books  limit 4
-router.get("/get-recent-books", authUser, async (req, res) => {
+router.get("/get-recent-books",async (req, res) => {
   try {
     const books = await Book.find().sort({ createdAt: -1 }).limit(4);
 
@@ -82,7 +82,7 @@ router.get("/get-recent-books", authUser, async (req, res) => {
   }
 });
 //get specific book
-router.get("/get-book-by-id/:id", authUser, async (req, res) => {
+router.get("/get-book-by-id/:id",async (req, res) => {
   try {
     const { id } = req.params;
     const book = await Book.findById(id);
